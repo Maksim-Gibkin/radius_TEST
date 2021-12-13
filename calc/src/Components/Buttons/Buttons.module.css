@@ -1,0 +1,37 @@
+.btns {
+    display: grid;
+    justify-items: center;
+    grid-template-areas:
+    "ac plusAndMinus percent divide";
+    grid-gap: 5px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: inherit;
+    background-color: #333131;
+    cursor: pointer;
+}
+
+.btns button:hover {
+    filter: brightness(125%);
+}
+.btns button:active {
+    filter: brightness(85%);
+}
+
+
+
+
+.bg_grey{
+    background-color: #b4b3b3;
+}
+.bg_orange{
+    background-color: #e07b36;
+}
