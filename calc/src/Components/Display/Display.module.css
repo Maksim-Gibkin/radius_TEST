@@ -1,0 +1,14 @@
+.display {
+    padding: 15px;
+    height: 120px;
+
+    display: grid;
+    justify-items: end;
+    align-items: end;
+
+    font: 3rem "Fira Sans", sans-serif;
+}
+
+.display p {
+    margin: 0;
+}

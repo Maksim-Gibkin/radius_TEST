@@ -3,7 +3,9 @@
     justify-items: center;
     grid-template-areas:
     "ac plusAndMinus percent divide";
-    grid-gap: 5px;
+    grid-gap: 10px;
+
+    margin: 0 10px;
 }
 
 button {
