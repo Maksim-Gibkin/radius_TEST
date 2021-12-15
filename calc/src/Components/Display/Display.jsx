@@ -1,9 +1,9 @@
 import s from "./Display.module.css"
 
-function Display() {
+function Display({content}) {
     return (
         <div className={s.display}>
-            <p>10</p>
+            <p>{content}</p>
         </div>
     );
 }

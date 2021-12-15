@@ -1,9 +1,10 @@
 import s from './Buttons.module.css'
 
-function Buttons() {
+function Buttons({actionsButton}) {
+
     return (
         <div>
-            <form action="#" className={s.btns}>
+            <form action="#" className={s.btns} onClick={el => actionsButton(el.target.textContent)}>
                 <button className={`${s.bg_grey} ${s.ac}`}>AC</button>
                 <button className={`${s.bg_grey} ${s.plusAndMinus}`}>+/-</button>
                 <button className={`${s.bg_grey} ${s.percent}`}>%</button>
@@ -25,7 +26,7 @@ function Buttons() {
                 <button className={s.bg_orange}>+</button>
 
                 <button>0</button>
-                <button>.</button>
+                <button>,</button>
                 <button>del</button>
                 <button className={s.bg_orange}>=</button>
             </form>
