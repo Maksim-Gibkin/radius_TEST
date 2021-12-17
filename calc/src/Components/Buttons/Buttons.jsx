@@ -1,37 +1,39 @@
+import {  useState } from 'react';
 import s from './Buttons.module.css'
 
-function Buttons({actionsButton}) {
+
+export const Buttons = ({actionsButton, result, content}) => {
+
+
+    const buttonConfig = [
+        {value: 'AC', className: s.bg_grey, onClick: actionsButton},
+        {value: '+/-', className: s.bg_grey, onClick: actionsButton},
+        {value: '%', className: s.bg_grey, onClick: actionsButton},
+        {value: '/', className: s.bg_grey, onClick: actionsButton},
+        {value: '9', className: '', onClick: actionsButton},
+        {value: '8', className: '', onClick: actionsButton},
+        {value: '7', className: '', onClick: actionsButton},
+        {value: 'X', className: s.bg_orange, onClick: actionsButton},
+        {value: '4', className: '', onClick: actionsButton},
+        {value: '5', className: '', onClick: actionsButton},
+        {value: '6', className: '', onClick: actionsButton},
+        {value: '-', className: s.bg_orange, onClick: actionsButton},
+        {value: '1', className: '', onClick: actionsButton},
+        {value: '2', className: '', onClick: actionsButton},
+        {value: '3', className: '', onClick: actionsButton},
+        {value: '+', className: s.bg_orange, onClick: actionsButton},
+        {value: '0', className: '', onClick: actionsButton},
+        {value: '.', className: '', onClick: actionsButton},
+    ]
+
+    const [rows, setRows] = useState(buttonConfig)
 
     return (
-        <div>
-            <form action="#" className={s.btns} onClick={el => actionsButton(el.target.textContent)}>
-                <button className={`${s.bg_grey} ${s.ac}`}>AC</button>
-                <button className={`${s.bg_grey} ${s.plusAndMinus}`}>+/-</button>
-                <button className={`${s.bg_grey} ${s.percent}`}>%</button>
-                <button className={`${s.bg_orange} ${s.divide}`}>/</button>
-
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button className={s.bg_orange}>X</button>
-
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button className={s.bg_orange}>-</button>
-
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button className={s.bg_orange}>+</button>
-
-                <button>0</button>
-                <button>,</button>
-                <button>del</button>
-                <button className={s.bg_orange}>=</button>
-            </form>
+        <div className={s.button__wrapper}>
+            {rows.map((e, index) => {
+                return ( <button key={index} className={e.className} onClick={e.onClick}>{e.value}</button>)
+            })}
+            <button className={s.bg_orange} onClick = {() => result(content)}> = </button>
         </div>
     );
 }
-
-export default Buttons;
